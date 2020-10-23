@@ -10,7 +10,7 @@
       src: "{{ CRS_PATH }}/clusterctl_env_template_ubuntu.rc"
       dest: "{{ TEMP_GEN_DIR }}/clusterctl_env_template_ubuntu.rc"
 
-  - name: Create a temporary manifest directory if it does not exist
+  - name: Create manifest directory if it does not exist
     file:
       path: "{{ HOME }}/.cluster-api/overrides/infrastructure-metal3/{{ CAPM3RELEASE }}"
       state: directory
