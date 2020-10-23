@@ -12,7 +12,7 @@
 
   - name: Create a temporary manifest directory if it does not exist
     file:
-      path: "{{ HOME }}/.cluster-api/overrides/infrastructure-metal3
+      path: "{{ HOME }}/.cluster-api/overrides/infrastructure-metal3"
       state: directory
       mode: '0755'
 
