@@ -1,6 +1,7 @@
 ---
 - name: "{{ CAPM3_VERSION }} integration test"
   hosts: kubernetes_master_nodes
+  connection: local
   gather_facts: true
   become: yes
   tasks:
