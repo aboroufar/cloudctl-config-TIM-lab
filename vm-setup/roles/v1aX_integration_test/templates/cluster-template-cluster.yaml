@@ -66,20 +66,4 @@ spec:
   prefix: ${ EXTERNAL_SUBNET_V4_PREFIX }
   gateway: ${ EXTERNAL_SUBNET_V4_HOST }
 {% endif %}
-{% if IP_STACK == 'v6' or IP_STACK == 'v4v6' %}
----
-apiVersion: ipam.metal3.io/v1alpha1
-kind: IPPool
-metadata:
-  name: baremetalv6-pool
-  namespace: ${ NAMESPACE }
-spec:
-  clusterName: ${ CLUSTER_NAME }
-  namePrefix: ${ CLUSTER_NAME }-bmv6
-  pools:
-    - start: ${ BAREMETALV6_POOL_RANGE_START }
-      end: ${ BAREMETALV6_POOL_RANGE_END }
-  prefix: ${ EXTERNAL_SUBNET_V6_PREFIX }
-  gateway: ${ EXTERNAL_SUBNET_V6_HOST }
-{% endif %}
 {% endif %}
