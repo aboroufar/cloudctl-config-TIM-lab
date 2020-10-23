@@ -1,0 +1,401 @@
++ source /root/kube-cluster/metal3-dev-env//lib/common.sh
+++ [[ :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin: != *\:\/\u\s\r\/\l\o\c\a\l\/\g\o\/\b\i\n\:* ]]
+++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
++++ go env
+/root/kube-cluster/metal3-dev-env//lib/common.sh: line 5: go: command not found
+++ eval ''
+++ export GOPATH
+++++ dirname /root/kube-cluster/metal3-dev-env//lib/common.sh
++++ cd /root/kube-cluster/metal3-dev-env//lib/..
++++ pwd
+++ SCRIPTDIR=/root/kube-cluster/metal3-dev-env
++++ whoami
+++ USER=root
+++ export USER=root
+++ USER=root
+++ '[' -z '' ']'
+++ '[' '!' -f /root/kube-cluster/metal3-dev-env/config_root.sh ']'
+++ CONFIG=/root/kube-cluster/metal3-dev-env/config_root.sh
+++ source /root/kube-cluster/metal3-dev-env/config_root.sh
+++ ADDN_DNS=
+++ EXT_IF=
+++ PRO_IF=
+++ MANAGE_BR_BRIDGE=y
+++ MANAGE_PRO_BRIDGE=y
+++ MANAGE_INT_BRIDGE=y
+++ INT_IF=
+++ ROOT_DISK_NAME=/dev/sda
+++ NODE_HOSTNAME_FORMAT=node-%d
++++ tr -d '"'
++++ awk -F= '/^ID=/ { print $2 }' /etc/os-release
+++ OS=ubuntu
+++ [[ ubuntu == ubuntu ]]
+++ export CONTAINER_RUNTIME=docker
+++ CONTAINER_RUNTIME=docker
+++ [[ docker == \p\o\d\m\a\n ]]
+++ export POD_NAME=
+++ POD_NAME=
+++ export POD_NAME_INFRA=
+++ POD_NAME_INFRA=
+++ export OS
+++ export SSH_KEY=/root/.ssh/id_rsa
+++ SSH_KEY=/root/.ssh/id_rsa
+++ export SSH_PUB_KEY=/root/.ssh/id_rsa.pub
+++ SSH_PUB_KEY=/root/.ssh/id_rsa.pub
+++ '[' '!' -f /root/.ssh/id_rsa ']'
+++ FILESYSTEM=/
+++ export CAPM3_VERSION=v1alpha4
+++ CAPM3_VERSION=v1alpha4
+++ CAPM3_VERSION_LIST='v1alpha3 v1alpha4'
+++ echo 'v1alpha3 v1alpha4'
+++ grep -wq v1alpha4
+++ M3PATH=/src/github.com/metal3-io
+++ BMOPATH=/src/github.com/metal3-io/baremetal-operator
+++ RUN_LOCAL_IRONIC_SCRIPT=/src/github.com/metal3-io/baremetal-operator/tools/run_local_ironic.sh
+++ CAPM3PATH=/src/github.com/metal3-io/cluster-api-provider-metal3
+++ CAPM3_BASE_URL=metal3-io/cluster-api-provider-metal3
+++ CAPM3REPO=https://github.com/metal3-io/cluster-api-provider-metal3
+++ IPAMPATH=/src/github.com/metal3-io/ip-address-manager
+++ IPAM_BASE_URL=metal3-io/ip-address-manager
+++ IPAMREPO=https://github.com/metal3-io/ip-address-manager
+++ IPAMBRANCH=master
+++ CAPIPATH=/src/github.com/metal3-io/cluster-api
+++ CAPI_BASE_URL=kubernetes-sigs/cluster-api
+++ CAPIREPO=https://github.com/kubernetes-sigs/cluster-api
+++ '[' v1alpha4 == v1alpha4 ']'
+++ CAPM3BRANCH=master
+++ export CAPI_VERSION=v1alpha3
+++ CAPI_VERSION=v1alpha3
+++ BMOREPO=https://github.com/metal3-io/baremetal-operator.git
+++ BMOBRANCH=master
+++ FORCE_REPO_UPDATE=false
+++ BMO_RUN_LOCAL=false
+++ CAPM3_RUN_LOCAL=false
+++ WORKING_DIR=/opt/metal3-dev-env
+++ NODES_FILE=/opt/metal3-dev-env/ironic_nodes.json
+++ NODES_PLATFORM=libvirt
+++ export NAMESPACE=metal3
+++ NAMESPACE=metal3
+++ export NUM_NODES=2
+++ NUM_NODES=2
+++ export NUM_OF_MASTER_REPLICAS=1
+++ NUM_OF_MASTER_REPLICAS=1
+++ export NUM_OF_WORKER_REPLICAS=1
+++ NUM_OF_WORKER_REPLICAS=1
+++ export VM_EXTRADISKS=false
+++ VM_EXTRADISKS=false
+++ export DOCKER_REGISTRY_IMAGE=docker.io/registry:latest
+++ DOCKER_REGISTRY_IMAGE=docker.io/registry:latest
+++ export VBMC_IMAGE=quay.io/metal3-io/vbmc
+++ VBMC_IMAGE=quay.io/metal3-io/vbmc
+++ export SUSHY_TOOLS_IMAGE=quay.io/metal3-io/sushy-tools
+++ SUSHY_TOOLS_IMAGE=quay.io/metal3-io/sushy-tools
+++ export IRONIC_TLS_SETUP=true
+++ IRONIC_TLS_SETUP=true
+++ export IRONIC_BASIC_AUTH=true
+++ IRONIC_BASIC_AUTH=true
+++ export IPA_DOWNLOADER_IMAGE=quay.io/metal3-io/ironic-ipa-downloader
+++ IPA_DOWNLOADER_IMAGE=quay.io/metal3-io/ironic-ipa-downloader
+++ export IRONIC_IMAGE=quay.io/metal3-io/ironic
+++ IRONIC_IMAGE=quay.io/metal3-io/ironic
+++ export IRONIC_CLIENT_IMAGE=quay.io/metal3-io/ironic-client
+++ IRONIC_CLIENT_IMAGE=quay.io/metal3-io/ironic-client
+++ export IRONIC_INSPECTOR_IMAGE=quay.io/metal3-io/ironic-inspector
+++ IRONIC_INSPECTOR_IMAGE=quay.io/metal3-io/ironic-inspector
+++ export IRONIC_DATA_DIR=/opt/metal3-dev-env/ironic
+++ IRONIC_DATA_DIR=/opt/metal3-dev-env/ironic
+++ export IRONIC_IMAGE_DIR=/opt/metal3-dev-env/ironic/html/images
+++ IRONIC_IMAGE_DIR=/opt/metal3-dev-env/ironic/html/images
+++ export IRONIC_KEEPALIVED_IMAGE=quay.io/metal3-io/keepalived
+++ IRONIC_KEEPALIVED_IMAGE=quay.io/metal3-io/keepalived
+++ export BAREMETAL_OPERATOR_IMAGE=quay.io/metal3-io/baremetal-operator
+++ BAREMETAL_OPERATOR_IMAGE=quay.io/metal3-io/baremetal-operator
+++ export OPENSTACK_CONFIG=/root/.config/openstack/clouds.yaml
+++ OPENSTACK_CONFIG=/root/.config/openstack/clouds.yaml
+++ '[' v1alpha4 == v1alpha3 ']'
+++ export CAPM3_IMAGE=quay.io/metal3-io/cluster-api-provider-metal3:master
+++ CAPM3_IMAGE=quay.io/metal3-io/cluster-api-provider-metal3:master
+++ export IPAM_IMAGE=quay.io/metal3-io/ip-address-manager:master
+++ IPAM_IMAGE=quay.io/metal3-io/ip-address-manager:master
+++ export DEFAULT_HOSTS_MEMORY=4096
+++ DEFAULT_HOSTS_MEMORY=4096
+++ export CLUSTER_NAME=test1
+++ CLUSTER_NAME=test1
+++ export CLUSTER_APIENDPOINT_IP=192.168.111.249
+++ CLUSTER_APIENDPOINT_IP=192.168.111.249
+++ export KUBERNETES_VERSION=v1.18.8
+++ KUBERNETES_VERSION=v1.18.8
+++ export KUBERNETES_BINARIES_VERSION=v1.18.8
+++ KUBERNETES_BINARIES_VERSION=v1.18.8
+++ export KUBERNETES_BINARIES_CONFIG_VERSION=v0.2.7
+++ KUBERNETES_BINARIES_CONFIG_VERSION=v0.2.7
+++ '[' docker == docker ']'
+++ export EPHEMERAL_CLUSTER=kind
+++ EPHEMERAL_CLUSTER=kind
+++ export KUSTOMIZE_VERSION=v3.8.5
+++ KUSTOMIZE_VERSION=v3.8.5
+++ export KIND_VERSION=v0.9.0
+++ KIND_VERSION=v0.9.0
+++ SKIP_RETRIES=false
+++ TEST_TIME_INTERVAL=10
+++ TEST_MAX_TIME=240
+++ FAILS=0
+++ RESULT_STR=
+++ export ANSIBLE_DISPLAY_SKIPPED_HOSTS=no
+++ ANSIBLE_DISPLAY_SKIPPED_HOSTS=no
+++ export LIBVIRT_DEFAULT_URI=qemu:///system
+++ LIBVIRT_DEFAULT_URI=qemu:///system
+++ '[' root '!=' root ']'
+++ sudo -n uptime
++++ awk -F= '/^VERSION_ID=/ { print $2 }' /etc/os-release
++++ tr -d '"'
++++ cut -f1 -d.
+++ OS_VERSION=18
++++ awk -F= '/^VERSION_ID=/ { print $2 }' /etc/os-release
++++ tr -d '"'
+++ OS_VERSION_ID=18.04
+++ export OS_VERSION
+++ export OS_VERSION_ID
+++ [[ ubuntu == centos ]]
+++ [[ ubuntu == rhel ]]
+++ [[ ubuntu == ubuntu ]]
+++ [[ 18.04 != \1\8\.\0\4 ]]
+++ export USE_FIREWALLD=False
+++ USE_FIREWALLD=False
+++ [[ ubuntu == \r\h\e\l ]]
+++ [[ ubuntu = \c\e\n\t\o\s ]]
++++ df / --output=fstype
++++ tail -n 1
+++ FSTYPE=ext4
+++ case ${FSTYPE} in
+++ '[' '!' -d /opt/metal3-dev-env ']'
++ source /root/kube-cluster/metal3-dev-env//lib/releases.sh
+++ CAPM3RELEASEPATH=https://api.github.com/repos/metal3-io/cluster-api-provider-metal3/releases
+++ CAPIRELEASEPATH=https://api.github.com/repos/kubernetes-sigs/cluster-api/releases
+++ '[' v1alpha4 == v1alpha4 ']'
++++ get_latest_release https://api.github.com/repos/metal3-io/cluster-api-provider-metal3/releases v0.4.
++++ set +x
++++ echo v0.4.1
+++ export CAPM3RELEASE=v0.4.1
+++ CAPM3RELEASE=v0.4.1
++++ get_latest_release https://api.github.com/repos/kubernetes-sigs/cluster-api/releases v0.3.
++++ set +x
++++ echo v0.3.10
+++ export CAPIRELEASE=v0.3.10
+++ CAPIRELEASE=v0.3.10
+++ CAPIBRANCH=v0.3.10
+++ [[ v0.3.10 == '' ]]
+++ [[ v0.4.1 == '' ]]
++ source /root/kube-cluster/metal3-dev-env//lib/network.sh
+++ export CLUSTER_PROVISIONING_INTERFACE=ironicendpoint
+++ CLUSTER_PROVISIONING_INTERFACE=ironicendpoint
+++ export POD_CIDR=192.168.0.0/18
+++ POD_CIDR=192.168.0.0/18
+++ PROVISIONING_IPV6=false
+++ IPV6_ADDR_PREFIX=fd2e:6f44:5dd8:b856
+++ [[ false == \t\r\u\e ]]
+++ export LIBVIRT_FIRMWARE=bios
+++ LIBVIRT_FIRMWARE=bios
+++ export PROVISIONING_NETWORK=172.22.0.0/24
+++ PROVISIONING_NETWORK=172.22.0.0/24
+++ prefixlen PROVISIONING_CIDR 172.22.0.0/24
+++ resultvar=PROVISIONING_CIDR
+++ network=172.22.0.0/24
++++ python -c 'import ipaddress; print(ipaddress.ip_network(u"172.22.0.0/24").prefixlen)'
+++ result=24
+++ eval PROVISIONING_CIDR=24
++++ PROVISIONING_CIDR=24
+++ export PROVISIONING_CIDR
+++ export PROVISIONING_CIDR
++++ python -c 'import ipaddress; print(ipaddress.ip_network(u"172.22.0.0/24").netmask)'
+++ export PROVISIONING_NETMASK=255.255.255.0
+++ PROVISIONING_NETMASK=255.255.255.0
+++ network_address PROVISIONING_IP 172.22.0.0/24 1
+++ resultvar=PROVISIONING_IP
+++ network=172.22.0.0/24
+++ record=1
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 1 - 1, None)))'
+++ result=172.22.0.1
+++ eval PROVISIONING_IP=172.22.0.1
++++ PROVISIONING_IP=172.22.0.1
+++ export PROVISIONING_IP
+++ network_address CLUSTER_PROVISIONING_IP 172.22.0.0/24 2
+++ resultvar=CLUSTER_PROVISIONING_IP
+++ network=172.22.0.0/24
+++ record=2
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 2 - 1, None)))'
+++ result=172.22.0.2
+++ eval CLUSTER_PROVISIONING_IP=172.22.0.2
++++ CLUSTER_PROVISIONING_IP=172.22.0.2
+++ export CLUSTER_PROVISIONING_IP
+++ export PROVISIONING_IP
+++ export CLUSTER_PROVISIONING_IP
+++ [[ 172.22.0.1 == *\:* ]]
+++ export PROVISIONING_URL_HOST=172.22.0.1
+++ PROVISIONING_URL_HOST=172.22.0.1
+++ export CLUSTER_URL_HOST=172.22.0.2
+++ CLUSTER_URL_HOST=172.22.0.2
+++ [[ 192.168.111.249 == *\:* ]]
+++ export CLUSTER_APIENDPOINT_HOST=192.168.111.249
+++ CLUSTER_APIENDPOINT_HOST=192.168.111.249
+++ network_address dhcp_range_start 172.22.0.0/24 10
+++ resultvar=dhcp_range_start
+++ network=172.22.0.0/24
+++ record=10
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 10 - 1, None)))'
+++ result=172.22.0.10
+++ eval dhcp_range_start=172.22.0.10
++++ dhcp_range_start=172.22.0.10
+++ export dhcp_range_start
+++ network_address dhcp_range_end 172.22.0.0/24 100
+++ resultvar=dhcp_range_end
+++ network=172.22.0.0/24
+++ record=100
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 100 - 1, None)))'
+++ result=172.22.0.100
+++ eval dhcp_range_end=172.22.0.100
++++ dhcp_range_end=172.22.0.100
+++ export dhcp_range_end
+++ network_address PROVISIONING_POOL_RANGE_START 172.22.0.0/24 100
+++ resultvar=PROVISIONING_POOL_RANGE_START
+++ network=172.22.0.0/24
+++ record=100
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 100 - 1, None)))'
+++ result=172.22.0.100
+++ eval PROVISIONING_POOL_RANGE_START=172.22.0.100
++++ PROVISIONING_POOL_RANGE_START=172.22.0.100
+++ export PROVISIONING_POOL_RANGE_START
+++ network_address PROVISIONING_POOL_RANGE_END 172.22.0.0/24 200
+++ resultvar=PROVISIONING_POOL_RANGE_END
+++ network=172.22.0.0/24
+++ record=200
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 200 - 1, None)))'
+++ result=172.22.0.200
+++ eval PROVISIONING_POOL_RANGE_END=172.22.0.200
++++ PROVISIONING_POOL_RANGE_END=172.22.0.200
+++ export PROVISIONING_POOL_RANGE_END
+++ export PROVISIONING_POOL_RANGE_START
+++ export PROVISIONING_POOL_RANGE_END
+++ export CLUSTER_DHCP_RANGE=172.22.0.10,172.22.0.100
+++ CLUSTER_DHCP_RANGE=172.22.0.10,172.22.0.100
+++ EXTERNAL_SUBNET=
+++ [[ -n '' ]]
+++ export IP_STACK=v4
+++ IP_STACK=v4
+++ [[ v4 == \v\4 ]]
+++ export EXTERNAL_SUBNET_V4=192.168.111.0/24
+++ EXTERNAL_SUBNET_V4=192.168.111.0/24
+++ export EXTERNAL_SUBNET_V6=
+++ EXTERNAL_SUBNET_V6=
+++ [[ kind == \m\i\n\i\k\u\b\e ]]
+++ [[ -n 192.168.111.0/24 ]]
+++ prefixlen EXTERNAL_SUBNET_V4_PREFIX 192.168.111.0/24
+++ resultvar=EXTERNAL_SUBNET_V4_PREFIX
+++ network=192.168.111.0/24
++++ python -c 'import ipaddress; print(ipaddress.ip_network(u"192.168.111.0/24").prefixlen)'
+++ result=24
+++ eval EXTERNAL_SUBNET_V4_PREFIX=24
++++ EXTERNAL_SUBNET_V4_PREFIX=24
+++ export EXTERNAL_SUBNET_V4_PREFIX
+++ export EXTERNAL_SUBNET_V4_PREFIX
+++ [[ -z '' ]]
+++ network_address EXTERNAL_SUBNET_V4_HOST 192.168.111.0/24 1
+++ resultvar=EXTERNAL_SUBNET_V4_HOST
+++ network=192.168.111.0/24
+++ record=1
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"192.168.111.0/24").hosts(), 1 - 1, None)))'
+++ result=192.168.111.1
+++ eval EXTERNAL_SUBNET_V4_HOST=192.168.111.1
++++ EXTERNAL_SUBNET_V4_HOST=192.168.111.1
+++ export EXTERNAL_SUBNET_V4_HOST
+++ network_address BAREMETALV4_POOL_RANGE_START 192.168.111.0/24 100
+++ resultvar=BAREMETALV4_POOL_RANGE_START
+++ network=192.168.111.0/24
+++ record=100
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"192.168.111.0/24").hosts(), 100 - 1, None)))'
+++ result=192.168.111.100
+++ eval BAREMETALV4_POOL_RANGE_START=192.168.111.100
++++ BAREMETALV4_POOL_RANGE_START=192.168.111.100
+++ export BAREMETALV4_POOL_RANGE_START
+++ network_address BAREMETALV4_POOL_RANGE_END 192.168.111.0/24 200
+++ resultvar=BAREMETALV4_POOL_RANGE_END
+++ network=192.168.111.0/24
+++ record=200
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"192.168.111.0/24").hosts(), 200 - 1, None)))'
+++ result=192.168.111.200
+++ eval BAREMETALV4_POOL_RANGE_END=192.168.111.200
++++ BAREMETALV4_POOL_RANGE_END=192.168.111.200
+++ export BAREMETALV4_POOL_RANGE_END
+++ export BAREMETALV4_POOL_RANGE_START
+++ export BAREMETALV4_POOL_RANGE_END
+++ [[ -n '' ]]
+++ export EXTERNAL_SUBNET_V6_HOST=
+++ EXTERNAL_SUBNET_V6_HOST=
+++ export EXTERNAL_SUBNET_V6_PREFIX=
+++ EXTERNAL_SUBNET_V6_PREFIX=
+++ export BAREMETALV6_POOL_RANGE_START=
+++ BAREMETALV6_POOL_RANGE_START=
+++ export BAREMETALV6_POOL_RANGE_END=
+++ BAREMETALV6_POOL_RANGE_END=
+++ export REGISTRY_PORT=5000
+++ REGISTRY_PORT=5000
+++ [[ -n 192.168.111.1 ]]
+++ export REGISTRY=192.168.111.1:5000
+++ REGISTRY=192.168.111.1:5000
+++ network_address INITIAL_IRONICBRIDGE_IP 172.22.0.0/24 9
+++ resultvar=INITIAL_IRONICBRIDGE_IP
+++ network=172.22.0.0/24
+++ record=9
++++ python -c 'import ipaddress; import itertools; print(next(itertools.islice(ipaddress.ip_network(u"172.22.0.0/24").hosts(), 9 - 1, None)))'
+++ result=172.22.0.9
+++ eval INITIAL_IRONICBRIDGE_IP=172.22.0.9
++++ INITIAL_IRONICBRIDGE_IP=172.22.0.9
+++ export INITIAL_IRONICBRIDGE_IP
+++ export DEPLOY_KERNEL_URL=http://172.22.0.2:6180/images/ironic-python-agent.kernel
+++ DEPLOY_KERNEL_URL=http://172.22.0.2:6180/images/ironic-python-agent.kernel
+++ export DEPLOY_RAMDISK_URL=http://172.22.0.2:6180/images/ironic-python-agent.initramfs
+++ DEPLOY_RAMDISK_URL=http://172.22.0.2:6180/images/ironic-python-agent.initramfs
+++ '[' true == true ']'
+++ export IRONIC_URL=https://172.22.0.2:6385/v1/
+++ IRONIC_URL=https://172.22.0.2:6385/v1/
+++ export IRONIC_INSPECTOR_URL=https://172.22.0.2:5050/v1/
+++ IRONIC_INSPECTOR_URL=https://172.22.0.2:5050/v1/
++ source /root/kube-cluster/metal3-dev-env//lib/images.sh
+++ IMAGE_OS=Centos
+++ [[ Centos == \U\b\u\n\t\u ]]
+++ [[ Centos == \F\C\O\S ]]
+++ [[ Centos == \C\e\n\t\o\s ]]
+++ export IMAGE_NAME=CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8.qcow2
+++ IMAGE_NAME=CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8.qcow2
+++ export IMAGE_LOCATION=https://artifactory.nordix.org/artifactory/airship/images/k8s_v1.18.8
+++ IMAGE_LOCATION=https://artifactory.nordix.org/artifactory/airship/images/k8s_v1.18.8
+++ export IMAGE_URL=http://172.22.0.1/images/CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8.qcow2
+++ IMAGE_URL=http://172.22.0.1/images/CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8.qcow2
+++ export IMAGE_CHECKSUM=http://172.22.0.1/images/CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8.qcow2.md5sum
+++ IMAGE_CHECKSUM=http://172.22.0.1/images/CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8.qcow2.md5sum
+++ export IMAGE_USERNAME=metal3
+++ IMAGE_USERNAME=metal3
+++ IMAGE_BASE_NAME=CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8
+++ export IMAGE_RAW_NAME=CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8-raw.img
+++ IMAGE_RAW_NAME=CENTOS_8.2_NODE_IMAGE_K8S_v1.18.8-raw.img
++ export ANSIBLE_HOST_KEY_CHECKING=False
++ ANSIBLE_HOST_KEY_CHECKING=False
++ ANSIBLE_FORCE_COLOR=true
++ ansible-playbook
+usage: ansible-playbook [-h] [--version] [-v] [-k]
+                        [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+                        [-c CONNECTION] [-T TIMEOUT]
+                        [--ssh-common-args SSH_COMMON_ARGS]
+                        [--sftp-extra-args SFTP_EXTRA_ARGS]
+                        [--scp-extra-args SCP_EXTRA_ARGS]
+                        [--ssh-extra-args SSH_EXTRA_ARGS] [--force-handlers]
+                        [--flush-cache] [-b] [--become-method BECOME_METHOD]
+                        [--become-user BECOME_USER] [-K] [-t TAGS]
+                        [--skip-tags SKIP_TAGS] [-C] [--syntax-check] [-D]
+                        [-i INVENTORY] [--list-hosts] [-l SUBSET]
+                        [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+                        [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+                        [-f FORKS] [-M MODULE_PATH] [--list-tasks]
+                        [--list-tags] [--step] [--start-at-task START_AT_TASK]
+                        playbook [playbook ...]
+ansible-playbook: error: too few arguments

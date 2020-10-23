@@ -1,0 +1,8 @@
+---
+- name: "{{ CAPM3_VERSION }} integration test"
+  hosts: kubernetes_master_nodes
+  gather_facts: true
+  become: yes
+  tasks:
+    - import_role:
+        name: "v1aX_integration_test"
