@@ -7,8 +7,8 @@
 
   - name: Generate clusterctl env file
     template:
-      src: "{{ CRS_PATH }}/clusterctl_env_template_centos.rc"
-      dest: "{{ TEMP_GEN_DIR }}/clusterctl_env_template_centos.rc"
+      src: "{{ CRS_PATH }}/clusterctl_env_template_ubuntu.rc"
+      dest: "{{ TEMP_GEN_DIR }}/clusterctl_env_template_ubuntu.rc"
 
   - name: Create manifest directory if it does not exist
     file:
@@ -27,13 +27,13 @@
 
   - name: Generate templates
     shell: >
-      . {{ TEMP_GEN_DIR }}/clusterctl_env_template_centos.rc &&
+      . {{ TEMP_GEN_DIR }}/clusterctl_env_template_ubuntu.rc &&
       clusterctl config cluster {{ CLUSTER_NAME }}
       --from {{ HOME }}/.cluster-api/overrides/infrastructure-metal3/{{ CAPM3RELEASE }}/cluster-template-{{ item }}.yaml
       --kubernetes-version {{ KUBERNETES_VERSION }}
       --control-plane-machine-count={{ NUM_OF_MASTER_REPLICAS }}
       --worker-machine-count={{ NUM_OF_WORKER_REPLICAS }}
-      --target-namespace={{ NAMESPACE }} > {{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_{{ item }}_centos.yaml
+      --target-namespace={{ NAMESPACE }} > {{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_{{ item }}_ubuntu.yaml
     with_items:
       - cluster
       - controlplane
