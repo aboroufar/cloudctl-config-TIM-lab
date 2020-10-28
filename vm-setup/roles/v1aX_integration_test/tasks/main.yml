@@ -10,28 +10,28 @@
 - name: Provision cluster
   k8s:
     state: present
-    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_cluster_ubuntu.yaml"
+    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_cluster_centos.yaml"
     namespace: "{{ NAMESPACE }}"
   when: v1aX_integration_test_action == "provision_cluster"
 
 - name: Create control plane
   k8s:
     state: present
-    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_controlplane_ubuntu.yaml"
+    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_controlplane_centos.yaml"
     namespace: "{{ NAMESPACE }}"
   when: v1aX_integration_test_action == "provision_controlplane"
 
 - name: Create worker nodes
   k8s:
     state: present
-    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_workers_ubuntu.yaml"
+    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_workers_centos.yaml"
     namespace: "{{ NAMESPACE }}"
   when: v1aX_integration_test_action == "provision_workers"
 
 - name: Deprovision worker nodes
   k8s:
     state: absent
-    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_workers_ubuntu.yaml"
+    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_workers_centos.yaml"
     namespace: "{{ NAMESPACE }}"
   ignore_errors: yes
   when: v1aX_integration_test_action == "deprovision_workers"
@@ -39,7 +39,7 @@
 - name: Deprovision control plane
   k8s:
     state: absent
-    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_controlplane_ubuntu.yaml"
+    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_controlplane_centos.yaml"
     namespace: "{{ NAMESPACE }}"
   ignore_errors: yes
   when: v1aX_integration_test_action == "deprovision_controlplane"
@@ -47,7 +47,7 @@
 - name: Deprovision cluster
   k8s:
     state: absent
-    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_cluster_ubuntu.yaml"
+    src: "{{ TEMP_GEN_DIR }}/{{ CAPM3_VERSION }}_cluster_centos.yaml"
     namespace: "{{ NAMESPACE }}"
   ignore_errors: yes
   when: v1aX_integration_test_action == "deprovision_cluster"
