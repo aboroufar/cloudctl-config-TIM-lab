@@ -71,7 +71,6 @@ FILESYSTEM=${FILESYSTEM:="/"}
 # M3PATH : Path to clone the Metal3 Development Environment repository
 # BMOPATH : Path to clone the Bare Metal Operator repository
 # CAPM3PATH : Path to clone the Cluster API Provider Metal3 repository
-# CAPIPATH : Path to clone the Cluster API repository
 #
 # BMOREPO : Baremetal Operator repository URL
 # BMOBRANCH : Baremetal Operator repository branch to checkout
@@ -81,9 +80,6 @@ FILESYSTEM=${FILESYSTEM:="/"}
 #
 # BMO_RUN_LOCAL : run the Baremetal Operator locally (not in Kubernetes cluster)
 # CAPM3_RUN_LOCAL : run the Cluster API Provider Metal3 locally
-
-# CAPM3 version, defaults to CAPI_VERSION for backwards compatibility, and to v1alpha3
-# TODO remove the defaulting to CAPI_VERSION if multiple CAPI_VERSION work with a CAPM3 version
 export CAPM3_VERSION="${CAPM3_VERSION:-"v1alpha4"}"
 CAPM3_VERSION_LIST="v1alpha3 v1alpha4"
 if ! echo "${CAPM3_VERSION_LIST}" | grep -wq "${CAPM3_VERSION}"; then
@@ -91,34 +87,28 @@ if ! echo "${CAPM3_VERSION_LIST}" | grep -wq "${CAPM3_VERSION}"; then
   exit 1
 fi
 
-M3PATH="${M3PATH:-${GOPATH}/src/github.com/metal3-io}"
-BMOPATH="${BMOPATH:-${M3PATH}/baremetal-operator}"
+export M3PATH="${M3PATH:-${GOPATH}/src/github.com/metal3-io}"
+export BMOPATH="${BMOPATH:-${M3PATH}/baremetal-operator}"
 # shellcheck disable=SC2034
-RUN_LOCAL_IRONIC_SCRIPT="${BMOPATH}/tools/run_local_ironic.sh"
+export RUN_LOCAL_IRONIC_SCRIPT="${BMOPATH}/tools/run_local_ironic.sh"
 
-CAPM3PATH="${CAPM3PATH:-${M3PATH}/cluster-api-provider-metal3}"
-CAPM3_BASE_URL="${CAPM3_BASE_URL:-metal3-io/cluster-api-provider-metal3}"
-CAPM3REPO="${CAPM3REPO:-https://github.com/${CAPM3_BASE_URL}}"
+export CAPM3PATH="${CAPM3PATH:-${M3PATH}/cluster-api-provider-metal3}"
+export CAPM3_BASE_URL="${CAPM3_BASE_URL:-metal3-io/cluster-api-provider-metal3}"
+export CAPM3REPO="${CAPM3REPO:-https://github.com/${CAPM3_BASE_URL}}"
 
-IPAMPATH="${IPAMPATH:-${M3PATH}/ip-address-manager}"
-IPAM_BASE_URL="${IPAM_BASE_URL:-metal3-io/ip-address-manager}"
-IPAMREPO="${IPAMREPO:-https://github.com/${IPAM_BASE_URL}}"
-IPAMBRANCH="${IPAMBRANCH:-master}"
+export IPAMPATH="${IPAMPATH:-${M3PATH}/ip-address-manager}"
+export IPAM_BASE_URL="${IPAM_BASE_URL:-metal3-io/ip-address-manager}"
+export IPAMREPO="${IPAMREPO:-https://github.com/${IPAM_BASE_URL}}"
+export IPAMBRANCH="${IPAMBRANCH:-master}"
 
-CAPIPATH="${CAPIPATH:-${M3PATH}/cluster-api}"
 CAPI_BASE_URL="${CAPI_BASE_URL:-kubernetes-sigs/cluster-api}"
-CAPIREPO="${CAPIREPO:-https://github.com/${CAPI_BASE_URL}}"
 
+# Required CAPI version
+export CAPI_VERSION="v1alpha3"
 if [ "${CAPM3_VERSION}" == "v1alpha4" ]; then
   CAPM3BRANCH="${CAPM3BRANCH:-master}"
-  # Required CAPI version
-  # TODO if this requires to support multiple CAPI versions, use a list check like CAPM#_VERSION
-  export CAPI_VERSION="v1alpha3"
-
 else
   CAPM3BRANCH="${CAPM3BRANCH:-release-0.3}"
-  # Required CAPI version
-  export CAPI_VERSION="v1alpha3"
 fi
 
 BMOREPO="${BMOREPO:-https://github.com/metal3-io/baremetal-operator.git}"
@@ -138,6 +128,7 @@ export NUM_NODES=${NUM_NODES:-"2"}
 export NUM_OF_MASTER_REPLICAS="${NUM_OF_MASTER_REPLICAS:-"1"}"
 export NUM_OF_WORKER_REPLICAS="${NUM_OF_WORKER_REPLICAS:-"1"}"
 export VM_EXTRADISKS=${VM_EXTRADISKS:-"false"}
+export NODE_DRAIN_TIMEOUT=${NODE_DRAIN_TIMEOUT:-"0s"}
 
 # Docker registry for local images
 export DOCKER_REGISTRY_IMAGE=${DOCKER_REGISTRY_IMAGE:-"docker.io/registry:latest"}
